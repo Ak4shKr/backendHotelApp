@@ -12,8 +12,7 @@ const jwtAuthMiddleware = (req, res, next) => {
   try {
     // Verify the JWT token
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-
-    // console.log(decoded);
+    console.log("JWT Decoded: ", decoded);
 
     // Attach user information to the request object
     req.user = decoded;
@@ -27,6 +26,8 @@ const jwtAuthMiddleware = (req, res, next) => {
 // Function to generate JWT token
 const generateToken = (userData) => {
   // Generate a new JWT token using user data
+  console.log("Generating token with userData:", userData);
+
   return jwt.sign(userData, process.env.JWT_SECRET, { expiresIn: 30000 });
 };
 
