@@ -89,7 +89,7 @@ router.get("/profile", jwtAuthMiddleware, async (req, res) => {
 });
 
 // GET method to get the person
-router.get("/", [jwtAuthMiddleware, isManager], async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const data = await Person.find();
     console.log("data fetched");
