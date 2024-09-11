@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm install && npm run build",
+    "build": "echo 'No build needed for backend'",
     "start": "nodemon server.js"
   },
   "author": "prince kumar",
